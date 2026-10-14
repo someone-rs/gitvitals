@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitvitals"
+version = "0.1.0"
+description = "Health check for any git repository: activity, contributors, hygiene, and a 0-100 vitality score."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "someone-rs" }]
+keywords = ["git", "repository", "health", "metrics", "cli", "developer-tools"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+dependencies = ["rich>=13.0"]
+
+[project.urls]
+Homepage = "https://github.com/someone-rs/gitvitals"
+Repository = "https://github.com/someone-rs/gitvitals"
+Issues = "https://github.com/someone-rs/gitvitals/issues"
+
+[project.scripts]
+gitvitals = "gitvitals.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
